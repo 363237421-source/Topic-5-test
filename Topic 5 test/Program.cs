@@ -4,19 +4,21 @@
     {
         static void Main(string[] args)
         {
-            int grade;
-            Console.WriteLine("What is your grade?");
-            int.TryParse(Console.ReadLine(), out grade);
-            if (grade < 50)
-                Console.WriteLine("This is an F!");
-            if (grade <= 65)
-            Console.WriteLine("This is an D");
-            if (grade <= 75)
-                Console.WriteLine("This is a C!");
-            if (grade <= 85)
-                Console.WriteLine("This is a B");
-            if (grade > 85)
-                Console.WriteLine("This is an A");
+            double money;
+            string working;
+
+            Console.WriteLine("Hello, welcome to the movie theatres.");
+            Console.WriteLine("Are you working today? (Yes/No)");
+            working = Console.ReadLine().ToLower();
+            Console.WriteLine("How much money do you have?");
+            double.TryParse(Console.ReadLine(), out money);
+            if (money >= 20.00 && working == "no")
+                Console.WriteLine("Perfect you have " + money.ToString("C") + " and you don't have work");
+            Console.WriteLine("Would you like to spend your " + money.ToString("C") + "for a seat that costs $24");
+            else
+                Console.WriteLine("You don't reach the requirements, sorry...");
+
+            
         }
     }
 }
